@@ -6,7 +6,7 @@ We'll be able to see movies that exist in our DB. We'll also be able to see deta
 
 
 
-## Database Setup
+## Database Setup -- DONE
 
 1. Create a database named `saga_movies_weekend`
 2. Run the queries from `database.sql` on the `saga_movies_weekend` database.

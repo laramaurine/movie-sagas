@@ -12,7 +12,7 @@ CREATE TABLE "genres" (
 );
 
 
--- CREATE JUNCTION TABLE
+-- this is the junction table
 CREATE TABLE "movie_genres" (
 	"id" SERIAL PRIMARY KEY,
 	"movie_id" INT REFERENCES "movies",
