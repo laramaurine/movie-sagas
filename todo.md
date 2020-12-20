@@ -1,10 +1,12 @@
-[] home/list page
+[x] database
+
+[x] home/list page
     [] display all movies in database
 
-[] details page
+[x] details page
     [] show all genres
 
-[] add movie page
+[x] add movie page
     [] input for movie title
     [] input for movie poster url
     [] textarea for movie description
