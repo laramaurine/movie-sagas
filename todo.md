@@ -6,15 +6,15 @@
 [x] details page
     [] show all genres
 
-[x] add movie page
-    [] input for movie title
-    [] input for movie poster url
-    [] textarea for movie description
-    [] drop down for genres
+[x] add movie page - yay done
+    [x] input for movie title
+    [x] input for movie poster url
+    [x] textarea for movie description
+    [x] drop down for genres
 
-    [] buttons
-        [] cancel - brings back to home/list
-        [] save - update title and description
+    [x] buttons
+        [x] cancel - brings back to home/list
+        [x] save - update title and description - Submit
 
 [] styling
     [] cards

@@ -14,24 +14,42 @@ class AddMovie extends Component {
 
    componentDidMount(){
        console.log('in componenet did mount');
+       //GET GOES HERE???
    }
+   handleMovie = (event, propertyName) => {
+    //console.log('event happended', event)
+    this.setState({
+        newMovie: {
+            ...this.state.newMovie,
+            [propertyName]: event.target.value,
+           
+        }
+    });
+}
 
-   addNewMovie = event => {
-       event.preventDefault();
-       this.props.dispatch({type: 'POST_MOVIE', payload: this.state.newMovie})
+//    addNewMovie = event => {
+//        event.preventDefault();
+//        this.props.dispatch({type: 'POST_MOVIE', payload: this.state.newMovie})
+//        this.props.history.push('/')
+//     }
+
+   handleClick = () => {
+       console.log('cancel clicked');
+       this.props.history.push('/')
    }
     render(){
       
         return(
             <div>
+                {JSON.stringify(this.state)}
             <li><Link to="/">Go Back Home</Link></li>
             <h3>Add A new Movie</h3>
             
             <form onSubmit={this.addNewMovie}>
-            <input type='text' value={this.state.newMovie.title} onChange={this.handleMovie} />
-            <input type='text' value={this.state.newMovie.poster} onChange={this.handleMovie} />
-            <input type='text' value={this.state.newMovie.description} onChange={this.handleMovie} />
-            <select value={this.state.genre} onChange={this.handleMovie}>
+            <input required placeholder="Title"  value={this.state.newMovie.title} onChange={(event) => this.handleMovie (event, 'title')} />
+            <input required placeholder="Poster URL"  value={this.state.newMovie.poster} onChange={(event) =>this.handleMovie (event, 'poster')} />
+            <input required placeholder="Description"  value={this.state.newMovie.description} onChange={(event) =>this.handleMovie (event, 'description')} />
+            <select value={this.state.genre} onChange={(event) => this.handleMovie (event, 'genre')}>
                   <option value=""></option>
                   <option value="1">Adventure</option>
                   <option value="2">Animated</option>
@@ -48,6 +66,8 @@ class AddMovie extends Component {
                   <option value="13">SuperHero</option>
               </select>
             <input type='submit' value='Add New Movie' />
+            <button onClick={this.handleClick}>Cancel</button>
+            
         </form>
         </div>
         )
