@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 class Home extends Component {
     componentDidMount() {
@@ -12,7 +12,7 @@ class Home extends Component {
         this.props.dispatch({ type: 'FETCH_MOVIES' });
       }
     render(){
-        console.log('redux state =');
+        console.log('redux state =', this.props.reduxState);
       
         return(
             <div>

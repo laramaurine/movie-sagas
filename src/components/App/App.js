@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {HashRouter as Router, Route} from 'react-router-dom';
+//import {HashRouter as Router, Route} from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Home from '../Home/Home.js';
 import AddMovie from '../AddMovie/AddMovie.js';
 import Detail from '../Detail/Detail.js';
