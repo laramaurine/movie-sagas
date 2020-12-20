@@ -27,6 +27,7 @@ function* addMovie(action){
     }
 }
 
+
 // function* addDetail(id){
 //     try {
 //         const response = yield axios.get('/api/genre')

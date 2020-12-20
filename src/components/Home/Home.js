@@ -6,18 +6,16 @@ import Movie from '../Movie/Movie.js';
 class Home extends Component {
     componentDidMount() {
         //get movies on page load
-       this.getMovies()
-      }
-
-      getMovies() {
         this.props.dispatch({ type: 'FETCH_MOVIES' });
       }
+
+      
     render(){
         console.log('redux state =', this.props.reduxState);
       
         return(
             <div>
-            <li><Link to="/Detail">Movie Details</Link></li>
+            <li><Link to="/Detail/:id">Movie Details</Link></li>
             <li><Link to="/AddMovie">Add Your Fave Movie!</Link></li>
 
             <h1>Here are all the movies!</h1>
@@ -34,4 +32,3 @@ const mapStateToProps = (reduxState) => ({
   });
 
 export default connect(mapStateToProps)(Home);
-//export default (Home);

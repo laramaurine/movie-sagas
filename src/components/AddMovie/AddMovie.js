@@ -27,11 +27,11 @@ class AddMovie extends Component {
     });
 }
 
-//    addNewMovie = event => {
-//        event.preventDefault();
-//        this.props.dispatch({type: 'POST_MOVIE', payload: this.state.newMovie})
-//        this.props.history.push('/')
-//     }
+   addNewMovie = event => {
+       event.preventDefault();
+       this.props.dispatch({type: 'ADD_MOVIE', payload: this.state.newMovie})
+       this.props.history.push('/')
+    }
 
    handleClick = () => {
        console.log('cancel clicked');
