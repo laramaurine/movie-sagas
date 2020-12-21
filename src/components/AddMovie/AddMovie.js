@@ -41,7 +41,7 @@ class AddMovie extends Component {
       
         return(
             <div>
-                {JSON.stringify(this.state)}
+                {/* {JSON.stringify(this.state)} */}
             <li><Link to="/">Go Back Home</Link></li>
             <h3>Add A new Movie</h3>
             
