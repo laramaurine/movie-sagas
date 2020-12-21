@@ -11,32 +11,42 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects'
 import axios from 'axios';
+//import { response } from 'express';
 
 // Create the rootSaga generator function
 function* rootSaga() {
    yield takeEvery('ADD_MOVIE', addMovie);
+   yield takeEvery('FETCH_MOVIE', fetchMovie)
+   yield takeEvery('FETCH_DETAIL', fetchDetail)
 }
 
 //saga functions
 function* addMovie(action){
     try {
-        yield axios.post('/api/Movie', action.payload)
+        yield axios.post('/api/movie', action.payload)
         yield put({ type: 'FETCH_MOVIE'})
     }catch (error) {
         console.log('error in addMovie', error);
     }
 }
+function* fetchMovie() {
+    try{
+        const response = yield axios.get('/api/movie')
+        yield put({ type: 'SET_MOVIE', payload: response.data})
+        console.log('line 36 indes.js', response);
+    }catch (error) {
+        console.log('Error in saga GET index js', error)
+      }
+}
+function* fetchDetail(action) {
+    try{
+        const response = yield axios.get(`/api/movie/${action.payload}`)
+        yield put({ type: 'SET_DETAIL', payload: response.data})
+    }catch (error) {
+        console.log('Error in detail GET', error)
+      }
+}
 
-
-// function* addDetail(id){
-//     try {
-//         const response = yield axios.get('/api/genre')
-//         yield axios.post('/api/Movie', action.payload)
-//         yield put({ type: 'FETCH_DETAIL'})
-//     }catch (error) {
-//         console.log('error in addMovie', error);
-//     }
-// }
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();

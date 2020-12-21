@@ -2,7 +2,22 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
-//router.get ORDER BY title -- gets all the movies
+
+router.get('/:id', (req, res) => {
+  console.log(req.params.id);
+  const movie = req.params.id;
+  const queryText = `SELECT * FROM movies
+  JOIN movie_genres ON movies.id = movie_genres.movie_id
+  JOIN genres ON movie_genres.genre_id = genres.id
+  WHERE movies.id=${movie}`;
+  pool.query(queryText)
+    .then(result => {
+      res.send(result.rows);
+    }).catch(error => {
+      console.log('error in GET Movies from DB', error);
+    })
+})
+
 router.get('/', (req, res) => {
   console.log(req.body.params);
   const sqlText = `SELECT * FROM movies ORDER BY title`;
@@ -12,21 +27,6 @@ router.get('/', (req, res) => {
   }).catch(error => {
     console.log('error in GET Movies from DB', error);
   })
-})
-//router.get SPECIFIC MOVIE STUFF -- details
-router.get('/:id', (req, res) => {
-  console.log(req.params.id);
-  const movie = req.params.id;
-  const sqlText = `SELECT * FROM movies
-  JOIN movie_genres ON movies.id = movie_genres.movie_id
-  JOIN genres ON movie_genres.genre_id = genres.id
-  WHERE movies.id=${movie}`;
-  pool.query(sqlText)
-    .then(result => {
-      res.send(result.rows);
-    }).catch(error => {
-      console.log('error in GET Movies from DB', error);
-    })
 })
 
 router.post('/', (req, res) => {

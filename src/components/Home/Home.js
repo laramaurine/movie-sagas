@@ -6,7 +6,7 @@ import Movie from '../Movie/Movie.js';
 class Home extends Component {
     componentDidMount() {
         //get movies on page load
-        this.props.dispatch({ type: 'FETCH_MOVIES' });
+        this.props.dispatch({ type: 'FETCH_MOVIE' });
       }
 
       
@@ -20,7 +20,7 @@ class Home extends Component {
 
             <h1>Here are all the movies!</h1>
             <Movie />
-            {JSON.stringify(this.props.reduxState)}
+            
 
             </div>
         )
