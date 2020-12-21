@@ -49,7 +49,7 @@ class AddMovie extends Component {
             <input required placeholder="Title"  value={this.state.newMovie.title} onChange={(event) => this.handleMovie (event, 'title')} />
             <input required placeholder="Poster URL"  value={this.state.newMovie.poster} onChange={(event) =>this.handleMovie (event, 'poster')} />
             <input required placeholder="Description"  value={this.state.newMovie.description} onChange={(event) =>this.handleMovie (event, 'description')} />
-            <select value={this.state.genre_id} onChange={(event) => this.handleMovie (event, 'genre')}>
+            <select value={this.state.genre_id} onChange={(event) => this.handleMovie (event, 'genre_id')}>
                   <option value=""></option>
                   <option value="1">Adventure</option>
                   <option value="2">Animated</option>
