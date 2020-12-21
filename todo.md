@@ -1,7 +1,7 @@
 [x] database
 
 [x] home/list page
-    [] display all movies in database
+    [x] display all movies in database
 
 [x] details page
     [] show all genres

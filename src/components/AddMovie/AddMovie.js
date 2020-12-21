@@ -43,7 +43,7 @@ class AddMovie extends Component {
             <div>
                 {/* {JSON.stringify(this.state)} */}
             <li><Link to="/">Go Back Home</Link></li>
-            <h3>Add A new Movie</h3>
+            <h3>Add A New Movie!!!!!!!!!!!</h3>
             
             <form onSubmit={this.addNewMovie}>
             <input required placeholder="Title"  value={this.state.newMovie.title} onChange={(event) => this.handleMovie (event, 'title')} />

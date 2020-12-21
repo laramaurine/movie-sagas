@@ -15,7 +15,7 @@ class Home extends Component {
       
         return(
             <div>
-            <li><Link to="/Detail/:id">Movie Details</Link></li>
+            
             <li><Link to="/AddMovie">Add Your Fave Movie!</Link></li>
 
             <h1>Here are all the movies!</h1>

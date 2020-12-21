@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
+import './Movie.css';
 
 class Movie extends Component {
   showDetails = (id) => {
@@ -14,7 +15,7 @@ class Movie extends Component {
      
         return (
           <div>
-          <h1>Movies!</h1>
+          <h4>Movies!</h4>
          <div>
              {this.props.reduxState.movie.map((movie) =>
              <div key={movie.id}className="MovieListItem">
