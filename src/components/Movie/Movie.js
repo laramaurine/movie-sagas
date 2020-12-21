@@ -7,7 +7,7 @@ class Movie extends Component {
   showDetails = (id) => {
     console.log('movie clicked', id);
     this.props.dispatch({type: 'FETCH_DETAIL', payload: id})
-    //this.props.history.push('/detail')
+    this.props.history.push('/detail')
     console.log('history is =======', this.props.history);
 }
     render(){
