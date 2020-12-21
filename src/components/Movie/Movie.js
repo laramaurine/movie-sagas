@@ -17,7 +17,7 @@ class Movie extends Component {
           <h1>Movies!</h1>
          <div>
              {this.props.reduxState.movie.map((movie) =>
-             <div key={movie.id}>
+             <div key={movie.id}className="MovieListItem">
                 <div>{movie.title}</div>
                 <img src={movie.poster} alt={movie.description} onClick={(event) => this.showDetails(movie.id)}/>
               {JSON.stringify(this.props.reduxState.movie.id)}
