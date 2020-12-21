@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //import { Link} from 'react-router-dom';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import './AddMovie.css';
+
+
 class AddMovie extends Component {
    state = {
        newMovie: {
@@ -14,10 +17,10 @@ class AddMovie extends Component {
 
    componentDidMount(){
        console.log('in componenet did mount');
-       //GET GOES HERE???
+       //eventually change to map genre categories instead of hard coding
    }
    handleMovie = (event, propertyName) => {
-    //console.log('event happended', event)
+  
     this.setState({
         newMovie: {
             ...this.state.newMovie,
@@ -34,7 +37,7 @@ class AddMovie extends Component {
     }
 
    handleClick = () => {
-       console.log('cancel clicked');
+       //console.log('cancel clicked');
        this.props.history.push('/')
    }
     render(){
@@ -65,8 +68,8 @@ class AddMovie extends Component {
                   <option value="12">Space Opera</option>
                   <option value="13">SuperHero</option>
               </select>
-            <input type='submit' value='Add New Movie' />
-            <button onClick={this.handleClick}>Cancel</button>
+            <input class="submit" type='submit' value='Add New Movie' />
+            <button class="cancelButton" onClick={this.handleClick}>Cancel</button>
             
         </form>
         </div>
